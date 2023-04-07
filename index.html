@@ -7,6 +7,49 @@
     <title>Medicine</title>
 </head>
 <body>
-    
+    <div class="container">
+        <h1>MEDICINE</h1>
+        <div class="card" id="cards">
+
+            <script>
+                const xmlhttp = new XMLHttpRequest();
+                xmlhttp.open("GET", "medicine.php");
+                xmlhttp.send();
+                xmlhttp.onload = function() {
+                    const medicine = JSON.parse(this.responseText).medicine;
+                    const items = document.getElementById('cards');
+                    var j=0;
+                    if(medicine){
+                        for(const i in medicine){
+                            j += 1;
+                            const row =`
+                                <div class="card">
+                                    <div class="face front">
+                                        <img src="${medicine[i].image}" alt="">
+                                        <h3>${medicine[i].name}</h3>
+                                    </div>
+                                    <div class="face back">
+                                        <h3>${medicine[i].treatment}</h3>
+                                        <p>${medicine[i].brand}</p>
+                                        <p>${medicine[i].generic}</p>
+                                        <p>${medicine[i].manufacturer}</p>
+                                        <p>${medicine[i].formulation}</p>
+                                        <p>Dosage</p>
+                                        <ul>
+                                            <p>dose1:${medicine[i].dosage.dose1}</p>
+                                            <p>dose2:${medicine[i].dosage.doe2}</p>
+                                            <p>dose3:${medicine[i].dosage.dose3}</p>
+                                            <p>dose4:${medicine[i].dosage.doe4}</p>
+                                        </ul>
+                                    </div>
+                                </div>
+                            `;
+                            items.innerHTML += row;
+                        }
+                    }
+                }
+            </script>
+        </div>
+    </div>   
 </body>
 </html>
