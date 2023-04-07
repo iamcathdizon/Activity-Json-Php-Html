@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medicine</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
@@ -26,7 +27,7 @@
                                 <div class="card">
                                     <div class="face front">
                                         <img src="${medicine[i].image}" alt="">
-                                        <h3>${medicine[i].name}</h3>
+                                        <h3>${medicine[i].brand}</h3>
                                     </div>
                                     <div class="face back">
                                         <h3>${medicine[i].treatment}</h3>
@@ -36,10 +37,10 @@
                                         <p>${medicine[i].formulation}</p>
                                         <p>Dosage</p>
                                         <ul>
-                                            <p>dose1:${medicine[i].dosage.dose1}</p>
-                                            <p>dose2:${medicine[i].dosage.doe2}</p>
-                                            <p>dose3:${medicine[i].dosage.dose3}</p>
-                                            <p>dose4:${medicine[i].dosage.doe4}</p>
+                                            <p>Dose1:${medicine[i].dosage.Dose1}</p>
+                                            <p>Dose2:${medicine[i].dosage.Dose2}</p>
+                                            <p>Dose3:${medicine[i].dosage.Dose3}</p>
+                                            <p>Dose4:${medicine[i].dosage.Dose4}</p>
                                         </ul>
                                     </div>
                                 </div>
